@@ -1,0 +1,24 @@
+###########################################################################
+###########################################################################
+
+Client -> Loadbalancer -> AppServer -> RabbitQ
+								    -> Caching Machine -> DB Machine
+##########################################################################
+
+- SecurityGroup_1:
+  to allow incoming users's http/https requests from anywhere to App Machine.
+  include load balancing machine.
+- SecurityGroup_2
+  to recieve the 8080 requests from the load balancer to AppServer.
+  include AppServer.
+- SecurityGroup_3
+  to recieve requests from AppServer to backend servers.
+  include Queuing machine, Caching machine, DB machine.
+#------------------------------------------------------------------------#
+#                  Instances                                             #
+#------------------------------------------------------------------------#
+1- Loadbalancer - AWS Elasticx IPs
+2- AppServer - AWS Linux, Tomcat.
+3- Queuing - AWS Linux, RabbitQ.
+4- Caching - AWS Linux MemCache.
+5- DB machine - AWS Linux, MariaDB.
