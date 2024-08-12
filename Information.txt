@@ -17,8 +17,21 @@ Client -> Loadbalancer -> AppServer -> RabbitQ
 #------------------------------------------------------------------------#
 #                  Instances                                             #
 #------------------------------------------------------------------------#
-1- Loadbalancer - AWS Elasticx IPs
-2- AppServer - AWS Linux, Tomcat.
-3- Queuing - AWS Linux, RabbitQ.
-4- Caching - AWS Linux MemCache.
-5- DB machine - AWS Linux, MariaDB.
+1- Loadbalancer - AWS Elasticx IPs  > 192.168.1.8
+2- AppServer - AWS Linux, Tomcat.   > 192.168.1.9
+3- Queuing - AWS Linux, RabbitQ.    > 192.168.1.7
+4- Caching - AWS Linux MemCache.    > 192.168.1.6
+5- DB machine - AWS Linux, MariaDB. > 192.168.1.5
+
+#---------------------------#
+#  Installing db security   #
+#---------------------------#
+1- Enter Key
+2- n
+3- y
+4- password > Enter Key
+5- password > Enter Key
+6- y
+7- n
+8- y
+9- y
